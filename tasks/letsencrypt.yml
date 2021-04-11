@@ -30,12 +30,12 @@
   file:
     path: /usr/local/bin/certbot-auto
     state: absent
-  when: verify_result|failed
+  when: verify_result is failed
 
 - name: re-raise certbot-auto verification failure
   fail:
     msg: "certbot-auto does not match the gpg key."
-  when: verify_result|failed
+  when: verify_result is failed
 
 - name: run certbot to get a key and certificate
   command: certbot-auto certonly --webroot -w {{ public_dir }} {{ letsencrypt_domain_args }} --email={{ admin_email }} --agree-tos --text --quiet --no-self-upgrade
