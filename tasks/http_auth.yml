@@ -3,7 +3,7 @@
   apt:
     name:
       - apache2-utils
-      - python-passlib
+      - python3-passlib
     state: present
 
 - name: add logins and passwords to htpasswd file
