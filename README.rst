@@ -91,7 +91,7 @@ role:
 - ``admin_email`` **required if cert_source = letsencrypt**
 - ``ssl_cert`` **required if cert_source = provided**
 - ``ssl_key`` **required if cert_source = provided**
-- ``letsencrypt_domains`` **default:** ``[domain, 'www.'+domain]``
+- ``certbot_certs`` **required if cert_source = letsencrypt** (see ``geerlingguy.certbot`` docs for format)
 - ``use_memcached`` **default:** ``true``
 - ``app_minions`` **required:** combined list of web servers and celery worker servers
 - ``project_port`` **default:** 8000 - what port to proxy Django requests to
